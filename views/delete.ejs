@@ -1,9 +1,9 @@
 <% include partials/head %>
 <main>
-        <p>Delete <%= playerName %> the <%= race %> <%= job %></p>
+        <p>Delete <%= gameNum%></p>
 <form action= "/delete" method="POST">
     <input type="hidden" id="delID" name="delid" value="<%= id %>">
-    <input type="hidden" id="delCharName" name="delCharName" value="<%= playerName %>">
+    <input type="hidden" id="delCharNum" name="delCharName" value="<%= gameNum %>">
     <button type="submit">Delete Post</button>
 </form>
 

@@ -11,11 +11,18 @@ let repo = require('../models/postRepository');
 // POST receives the data that user enters
   router.post("/",(req,res,next)=>{
   let character = {};
+  let arr = repo.getChars();
+  character.gameNum = arr.length +1;
   character.playerName = req.body.playerName;
   character.race = req.body.raceChooser;
   character.job = req.body.jobChooser;
-  repo.startGame(character);
-  res.redirect("/artifact");
+    if (repo.charExists === "True"){
+      alert ("player exists");
+    }else{
+      repo.startGame(character);
+      res.redirect("/artifact");
+     }
+
 });
 
 

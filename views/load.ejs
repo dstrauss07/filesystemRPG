@@ -5,6 +5,9 @@
 <main>
     <% for(var i = 0; i< characters.length; i++){%>
     <div class="row">
+            <div class="p-2">
+                  Game Number: <%- characters[i].gameNum %>
+                </div>
         <div class="p-2">
             <%- characters[i].playerName %>
         </div>
@@ -17,12 +20,12 @@
         
         <div class="p-2">
             <button  class="btn btn-success">
-                <a href="/loadgame/<%=characters[i].playerName %>">Load</a>
+                <a href="/loadgame/<%=characters[i].gameNum %>">Load</a>
             </button>
         </div>
         <div class="p-2">
             <button class="btn btn-danger">
-                <a href="/delete/<%=characters[i].playerName %>">Delete!</a>
+                <a href="/delete/<%=characters[i].gameNum %>">Delete!</a>
             </button>
         </div>
     </div>

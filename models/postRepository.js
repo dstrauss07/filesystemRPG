@@ -34,7 +34,7 @@ let saveChars = () => {
     });
 };
 
-
+// TO DO VALIDATE TO MAKE SURE NAME IS NOT ALREADY IN LIST
 
 
 loadChars();
@@ -53,14 +53,15 @@ let repo = {
         console.log(newChar.length)
         return newChar
     },
-    getCharByName: (playerName) =>{
+    getCharByNum: (gameNum) =>{
         return gameList.find((character)=> {
-        return character.playerName === playerName;
+        return character.gameNum === gameNum;
         });
     },
-    getCharIndex: (playerName) => {
+ 
+    getCharIndex: (gameNum) => {
         return gameList.findIndex((character) => {
-        return character.playerName === playerName;
+        return character.gameNum === gameNum;
         });
     },
     deleteChar: (index) => {
