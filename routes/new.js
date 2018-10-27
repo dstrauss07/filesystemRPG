@@ -13,7 +13,7 @@ let repo = require('../models/postRepository');
   let character = {};
   character.playerName = req.body.playerName;
   character.race = req.body.raceChooser;
-  character.class = req.body.classChooser;
+  character.job = req.body.jobChooser;
   repo.startGame(character);
   res.redirect("/artifact");
 });

@@ -46,7 +46,7 @@ let repo = {
         saveChars();
     },
     getChars: () =>{
-        console.log("got latest characters");
+        console.log("loaded the characters");
         return gameList
     },
     newCharacter:() =>{
@@ -55,7 +55,7 @@ let repo = {
     },
     getCharByName: (playerName) =>{
         return gameList.find((character)=> {
-            return character.playerName === playerName;
+        return character.playerName === playerName;
         });
     },
     getCharIndex: (playerName) => {
@@ -65,7 +65,6 @@ let repo = {
     },
     deleteChar: (index) => {
         gameList.splice(index,1);
-        console.log("the post has been deleted.");
         saveChars();
     }
 

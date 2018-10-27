@@ -9,7 +9,7 @@ router.get('/:playerName',(req,res,next)=>{
         title: 'The Hydra',
         playerName: character.playerName,
         race: character.race,
-        class: character.class,
+        job: character.job,
         id: repo.getCharIndex(req.params.playerName)
     });
 });
@@ -17,7 +17,9 @@ router.get('/:playerName',(req,res,next)=>{
 router.post("/", (req,res,next) =>{
     let delChar = {};    
     delChar.id = req.body.delid;
+    delChar.charName = req.body.delCharName;
     repo.deleteChar(delChar.id);
+    console.log( delChar.charName + " has been deleted")
     res.redirect('/');
 
 });
