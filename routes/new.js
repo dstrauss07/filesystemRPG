@@ -16,14 +16,9 @@ let repo = require('../models/postRepository');
   character.playerName = req.body.playerName;
   character.race = req.body.raceChooser;
   character.job = req.body.jobChooser;
-    if (repo.charExists === "True"){
-      alert ("player exists");
-    }else{
-      repo.startGame(character);
-      res.redirect("/artifact");
-     }
-
-});
+  repo.startGame(character);
+  res.redirect("/artifact");
+     });
 
 
 module.exports = router;

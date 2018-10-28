@@ -55,7 +55,7 @@ let repo = {
     },
     getCharByNum: (gameNum) =>{
         return gameList.find((character)=> {
-        return character.gameNum === gameNum;
+        return character.gameNum = gameNum;
         });
     },
  
