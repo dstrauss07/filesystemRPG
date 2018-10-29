@@ -20,7 +20,7 @@ let repo = require('../models/postRepository');
   character.job = req.body.jobChooser;
   //character.artifact = null;
   repo.startGame(character);
-  res.redirect("/artifact?gameNum=" + character.gameNum);
+  res.redirect("/artifact?playerName=" + character.playerName);
   });
 
 

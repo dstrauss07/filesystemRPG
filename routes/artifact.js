@@ -6,13 +6,13 @@ repo = require("../models/postRepository");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    let character = repo.getCharByNum(req.query.gameNum);
+    let character = repo.getCharByName(req.query.playerName);
     res.render('artifact', { title: 'Express',
     playerName: character.playerName,
     race: character.race,
     job: character.job,
     gameNum: character.gameNum,
-    ID: repo.getCharIndex(req.query.gameNum)
+    ID: repo.getCharIndexName(req.query.playerName)
  });
   });
   

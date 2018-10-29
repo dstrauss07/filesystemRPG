@@ -55,13 +55,23 @@ let repo = {
     },
     getCharByNum: (gameNum) =>{
         return gameList.find((character)=> {
-        return character.gameNum = gameNum;
+        return character.gameNum === gameNum;
+        });
+    },
+    getCharByName: (playerName) =>{
+        return gameList.find((character)=> {
+        return character.playerName === playerName;
         });
     },
  
     getCharIndex: (gameNum) => {
         return gameList.findIndex((character) => {
-        return character.gameNum = gameNum;
+        return character.gameNum === gameNum;
+        });
+    },
+    getCharIndexName: (playerName) => {
+        return gameList.findIndex((character) => {
+        return character.playerName === playerName;
         });
     },
     deleteChar: (index) => {
