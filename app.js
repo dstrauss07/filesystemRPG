@@ -8,7 +8,8 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var newGame = require('./routes/new');
 var loadPage = require('./routes/load');
-var delPage = require('./routes/delete')
+var delPage = require('./routes/delete');
+var artifact = require('./routes/artifact');
 
 var app = express();
 
@@ -27,6 +28,7 @@ app.use('/users', usersRouter);
 app.use('/new', newGame);
 app.use('/load', loadPage);
 app.use('/delete', delPage);
+app.use('/artifact', artifact);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

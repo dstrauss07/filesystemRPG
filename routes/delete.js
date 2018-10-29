@@ -20,8 +20,8 @@ router.post("/", (req,res,next) =>{
     delChar.id = req.body.delid;
     delChar.charName = req.body.delCharName;
     repo.deleteChar(delChar.id);
-    console.log( "Game " + delChar.charName + " has been deleted")
-
+    console.log( "Game " + delChar.charName + " has been deleted");
+    res.redirect("/");
 });
 
 module.exports = router;

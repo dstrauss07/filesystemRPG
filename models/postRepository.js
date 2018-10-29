@@ -61,12 +61,17 @@ let repo = {
  
     getCharIndex: (gameNum) => {
         return gameList.findIndex((character) => {
-        return character.gameNum === gameNum;
+        return character.gameNum = gameNum;
         });
     },
     deleteChar: (index) => {
         gameList.splice(index,1);
         saveChars();
+    },
+    updateChar:(index, update) =>{
+        gameList[index] = update;
+        saveChars();
+        console.log("the post has been edited.");
     }
 
 };
