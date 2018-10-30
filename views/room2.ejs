@@ -8,30 +8,29 @@ Atk: <%= atk %>
 Def: <%= def %>
 LucK: <%= luck %>
 Magic: <%= mag %>
-Artifact: <%=artifact%>
 
 <br>
-<p>An Evil Skeleton stands before you!</p>
-<form action="/room1" method="POST">
+<p>You come to a rickety bridge</p>
+<form action="/room2" method="POST">
     <div class="form-group">
             <label for="class-chooser">Choose your Action</label> <br>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="r1chooser" id="r1-attack" value="attack"
+                <input class="form-check-input" type="radio" name="r2chooser" id="r2-attack" value="attack"
                     checked>
-                <label class="form-check-label" for="r1-attack">
-                    Attack With a Mighty Blow!
+                <label class="form-check-label" for="r2-attack">
+                    Jump Across Like a Bufoon
                 </label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="r1chooser" id="r1-run" value="spell">
-                <label class="form-check-label" for="r1-run">
-                    Use Your Magic to Freeze His Bones
+                <input class="form-check-input" type="radio" name="r1chooser" id="r2-run" value="spell">
+                <label class="form-check-label" for="r2-run">
+                    Cast a Spell of Levitation
                 </label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="r1chooser" id="r1-trick" value="trick">
-                <label class="form-check-label" for="r1-trick">
-                    Tell Him a Joke
+                <input class="form-check-input" type="radio" name="r2chooser" id="r2-trick" value="trick">
+                <label class="form-check-label" for="r2-trick">
+                    Walk Slowly and Carefully Across While Whistling Dixie
                 </label>
             </div>
         </div> 

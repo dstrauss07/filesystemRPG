@@ -8,30 +8,29 @@ Atk: <%= atk %>
 Def: <%= def %>
 LucK: <%= luck %>
 Magic: <%= mag %>
-Artifact: <%=artifact%>
 
 <br>
-<p>An Evil Skeleton stands before you!</p>
-<form action="/room1" method="POST">
+<p>You come Face To Face with the Hydra</p>
+<form action="/room4" method="POST">
     <div class="form-group">
             <label for="class-chooser">Choose your Action</label> <br>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="r1chooser" id="r1-attack" value="attack"
+                <input class="form-check-input" type="radio" name="r4chooser" id="r4-attack" value="attack"
                     checked>
-                <label class="form-check-label" for="r1-attack">
-                    Attack With a Mighty Blow!
+                <label class="form-check-label" for="r4-attack">
+                    Attack
                 </label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="r1chooser" id="r1-run" value="spell">
-                <label class="form-check-label" for="r1-run">
-                    Use Your Magic to Freeze His Bones
+                <input class="form-check-input" type="radio" name="r4chooser" id="r4-run" value="spell">
+                <label class="form-check-label" for="r4-run">
+                    Cast a Mighty Spell
                 </label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="r1chooser" id="r1-trick" value="trick">
-                <label class="form-check-label" for="r1-trick">
-                    Tell Him a Joke
+                <input class="form-check-input" type="radio" name="r4chooser" id="r4-trick" value="trick">
+                <label class="form-check-label" for="r4-trick">
+                    Riddle Me this Hydra!
                 </label>
             </div>
         </div> 

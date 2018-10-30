@@ -11,6 +11,10 @@ var loadPage = require('./routes/load');
 var delPage = require('./routes/delete');
 var artifact = require('./routes/artifact');
 var room1 = require('./routes/room1');
+var room2 = require('./routes/room2');
+var room3 = require('./routes/room3');
+var room4 = require('./routes/room4');
+var end = require('./routes/end');
 
 var app = express();
 
@@ -31,6 +35,10 @@ app.use('/load', loadPage);
 app.use('/delete', delPage);
 app.use('/artifact', artifact);
 app.use('/room1', room1);
+app.use('/room2', room2);
+app.use('/room3', room3);
+app.use('/room4', room4);
+app.use('/end', end);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

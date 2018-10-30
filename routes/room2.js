@@ -3,25 +3,18 @@ let express = require('express'),
 router = express.Router(),
 repo = require("../models/postRepository");
 
-
-
-
-/* GET room 1 page. */
-
 router.get('/', function(req, res, next) {
     let character = repo.getCharByName(req.query.playerName);
-    let stats = repo.playerGen(character);
-    res.render('room1', { title: 'Express',
+    res.render('room2', { title: 'Express',
     playerName: character.playerName,
     race: character.race,
     job: character.job,
     gameNum: character.gameNum,
-    artifact: character.artifact,
-    hp: stats.hp,
-    atk: stats.atk,
-    def: stats.def,
-    luck: stats.luck,
-    mag: stats.mag,
+    hp: character.hp,
+    atk: character.atk,
+    def: character.def,
+    luck: character.luck,
+    mag: character.mag,
     ID: repo.getCharIndexName(req.query.playerName)
  });
   });
@@ -40,7 +33,7 @@ router.get('/', function(req, res, next) {
    updateChar.luck = req.body.luck;
    updateChar.mag = req.body.mag;
    repo.updateChar(updateChar.ID, updateChar);
-   res.redirect("/room2?playerName=" + updateChar.playerName);
+   res.redirect("/room3?playerName=" + updateChar.playerName);
    });
 
   module.exports = router;
