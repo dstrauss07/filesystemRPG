@@ -3,8 +3,8 @@ let express = require('express'),
 router = express.Router(),
 repo = require("../models/postRepository");
 
-router.get('/:gameNum',(req,res,next)=>{
-    let character = repo.getCharByNum(req.params.gameNum);
+router.get('/:playerName',(req,res,next)=>{
+    let character = repo.getCharByName(req.params.playerName);
     res.render('delete', {
         title: 'The Hydra',
         playerName: character.playerName,

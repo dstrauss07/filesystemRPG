@@ -1,0 +1,54 @@
+<% include partials/head %>
+<%= playerName %>
+<%= race %>
+<%= job %> 
+<%= hp %>
+HP: <%= hp %>
+Atk: <%= atk %>
+Def: <%= def %>
+LucK: <%= luck %>
+Magic: <%= mag %>
+
+<br>
+<p>An Evil Skeleton stands before you!</p>
+<form action="/room1" method="POST">
+    <div class="form-group">
+            <label for="class-chooser">Choose your Action</label> <br>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="r1chooser" id="r1-attack" value="attack"
+                    checked>
+                <label class="form-check-label" for="r1-attack">
+                    Attack
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="r1chooser" id="r1-run" value="run">
+                <label class="form-check-label" for="r1-run">
+                    Run
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="r1choser" id="r1-trick" value="trick">
+                <label class="form-check-label" for="r1-trick">
+                    Trick
+                </label>
+            </div>
+        </div> 
+        <div class="form-group">
+            <input type="hidden" id="gameNum" name="gameNum" value = "<%= gameNum %>">
+            <input type="hidden" id="playerName" name="playerName" value = "<%= playerName %>">
+            <input type="hidden" id="race" name="race" value = "<%= race %>">
+            <input type="hidden" id="job" name="job" value = "<%= job %>">
+            <input type="hidden" id="ID" name="ID" value = "<%= ID %>">
+            <input type="hidden" id="hp" name="hp" value = "<%= hp %>">
+            <input type="hidden" id="atk" name="atk" value = "<%= atk %>">
+            <input type="hidden" id="def" name="def" value = "<%= def %>">
+            <input type="hidden" id="luck" name="luck" value = "<%= luck %>">
+            <input type="hidden" id="mag" name="mag" value = "<%= mag %>">
+            <button class="btn" type="submit">Choose Wisely</button>
+        </div>
+
+</form>
+
+
+<% include partials/foot %>
