@@ -6,7 +6,7 @@ let repo = require('../models/postRepository');
 // Get- loads the new Game Page
   router.get('/', function(req, res, next) {
   
-  res.render('new', { title: 'The Hydra' });
+  res.render('newGame', { title: 'The Hydra' });
 });
 
 // POST receives the data that user enters

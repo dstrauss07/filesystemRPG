@@ -17,17 +17,17 @@
         <div class="p-2">
             <%- characters[i].job %>
         </div>
-        
         <div class="p-2">
-            <button  class="btn btn-success">
-                <a href="/loadgame/<%=characters[i].playerName %>">Load</a>
-            </button>
-        </div>
+                <button class="btn btn-danger">
+                    <a href="/<%= characters[i].stage %>?playerName=<%=characters[i].playerName %>">Load!</a>
+                </button>
+            </div>
         <div class="p-2">
             <button class="btn btn-danger">
                 <a href="/delete/<%=characters[i].playerName %>">Delete!</a>
             </button>
         </div>
+
     </div>
     <%}%>
 
