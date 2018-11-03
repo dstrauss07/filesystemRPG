@@ -26,7 +26,7 @@ router.get('/', function(req, res, next) {
    updateChar.playerName = req.body.playerName;
    updateChar.race = req.body.race;
    updateChar.job = req.body.job;
-   updateChar.artifact = req.body.artChooser;
+   updateChar.artifact = req.body.artifact;
    updateChar.ID = req.body.ID;
    updateChar.hp=req.body.hp;
    updateChar.atk= req.body.atk;
