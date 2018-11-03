@@ -5,7 +5,6 @@ repo = require("../models/postRepository");
 
 
 
-
 /* GET room 1 page. */
 
 router.get('/', function(req, res, next) {
@@ -26,6 +25,7 @@ router.get('/', function(req, res, next) {
  });
   });
 
+
   router.post("/",(req,res,next)=>{
     let updateChar = {};
    updateChar.gameNum = req.body.gameNum;
@@ -34,7 +34,7 @@ router.get('/', function(req, res, next) {
    updateChar.job = req.body.job;
    updateChar.artifact = req.body.artifact;
    updateChar.ID = req.body.ID;
-   updateChar.hp=req.body.hp;
+   updateChar.hp= req.body.hp - req.body.hpMin ;
    updateChar.atk= req.body.atk;
    updateChar.def= req.body.def;
    updateChar.luck = req.body.luck;
