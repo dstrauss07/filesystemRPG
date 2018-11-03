@@ -15,6 +15,7 @@ router.get('/', function(req, res, next) {
     def: character.def,
     luck: character.luck,
     mag: character.mag,
+    artifact: character.artifact,
     ID: repo.getCharIndexName(req.query.playerName)
  });
   });
@@ -32,6 +33,7 @@ router.get('/', function(req, res, next) {
    updateChar.def= req.body.def;
    updateChar.luck = req.body.luck;
    updateChar.mag = req.body.mag;
+   updateChar.artifact = req.body.artifact;
    repo.updateChar(updateChar.ID, updateChar);
    res.redirect("/room4?playerName=" + updateChar.playerName);
    });

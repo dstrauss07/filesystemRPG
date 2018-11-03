@@ -8,6 +8,7 @@ Atk: <%= atk %>
 Def: <%= def %>
 LucK: <%= luck %>
 Magic: <%= mag %>
+Artifact: <%= artifact %>
 
 <br>
 <p>You Are being attacked by a pack of wild demon dogs!</p>
@@ -44,8 +45,10 @@ Magic: <%= mag %>
             <input type="hidden" id="atk" name="atk" value = "<%= atk %>">
             <input type="hidden" id="def" name="def" value = "<%= def %>">
             <input type="hidden" id="luck" name="luck" value = "<%= luck %>">
+            <input type="hidden" id="artifact" name="artifact" value = "<%= artifact %>">
             <input type="hidden" id="mag" name="mag" value = "<%= mag %>">
             <button class="btn" type="submit">Choose Wisely</button>
+            <button class="btn" type="button">Use Your <%= artifact %></button>
         </div>
 
 </form>
