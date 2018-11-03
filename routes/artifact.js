@@ -25,6 +25,7 @@ router.get('/', function(req, res, next) {
     updateChar.job = req.body.job;
     updateChar.artifact = req.body.artChooser;
     updateChar.ID = req.body.ID;
+    updateChar.stage = "room1";
     repo.updateChar(updateChar.ID, updateChar);
     res.redirect("/room1?playerName=" + updateChar.playerName);
     });

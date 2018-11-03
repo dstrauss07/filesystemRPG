@@ -33,7 +33,7 @@ router.get('/', function(req, res, next) {
    updateChar.def= req.body.def;
    updateChar.luck = req.body.luck;
    updateChar.mag = req.body.mag;
-   updateChar.artifact = req.body.artifact;
+   updateChar.stage = "end";
    repo.updateChar(updateChar.ID, updateChar);
    res.redirect("/end");
    });

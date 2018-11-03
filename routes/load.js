@@ -8,4 +8,9 @@ router.get('/', function(req, res, next) {
   res.render('load', { title: 'The Hydra',
 characters: repo.getChars() });
 });
+
+
+
+
+
 module.exports = router;
