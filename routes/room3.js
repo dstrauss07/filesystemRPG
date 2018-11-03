@@ -32,6 +32,7 @@ router.get('/', function(req, res, next) {
    updateChar.def= req.body.def;
    updateChar.luck = req.body.luck;
    updateChar.mag = req.body.mag;
+   updateChar.stage = "room4";
    repo.updateChar(updateChar.ID, updateChar);
    res.redirect("/room4?playerName=" + updateChar.playerName);
    });
