@@ -44,8 +44,8 @@ router.get('/', function(req, res, next) {
    if(updateChar.hp<1){
     res.redirect("/dead");
   }else{
-    updateChar.stage = "end";
-    repo.updateChar(updateChar.ID, updateChar);
+  updateChar.stage = "end";
+  repo.updateChar(updateChar.ID, updateChar);
    res.redirect("/end");}
    });
 
