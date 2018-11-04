@@ -16,6 +16,13 @@ router.get('/', function(req, res, next) {
     luck: character.luck,
     mag: character.mag,
     artifact: character.artifact,
+    attack: "Run across as fast as you can",
+    magic: "Cast a levitation spell",
+    trick: "Walk slowly by while whistling",
+    monster: "Troll",
+    action: "confuse",
+    actionDesc: "so bad he falls into the abyss",
+    fail: "as he flattens you repeatedly with his giant club",
     ID: repo.getCharIndexName(req.query.playerName)
  });
   });
@@ -33,9 +40,13 @@ router.get('/', function(req, res, next) {
    updateChar.def= req.body.def;
    updateChar.luck = req.body.luck;
    updateChar.mag = req.body.mag;
-   updateChar.stage = "room3";
+   updateChar.hp = req.body.hp - req.body.hpMin;
+  if(updateChar.hp<1){
+    res.redirect("/dead");
+  }else{
+  updateChar.stage = "room3";
    repo.updateChar(updateChar.ID, updateChar);
-   res.redirect("/room3?playerName=" + updateChar.playerName);
+   res.redirect("/room3?playerName=" + updateChar.playerName);}
    });
 
   module.exports = router;

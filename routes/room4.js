@@ -16,6 +16,13 @@ router.get('/', function(req, res, next) {
     luck: character.luck,
     mag: character.mag,
     artifact: character.artifact,
+    attack: "Stab him with the point of your sword",
+    magic: "Hurl a mighty fireball at the beast",
+    trick: "Tell the Hydra an Impossible riddle",
+    monster: "hydra",
+    action: "slay",
+    actionDesc: "as 7 of his heads explode",
+    fail: "it devours you with a healthy side of Catsup",
     ID: repo.getCharIndexName(req.query.playerName)
  });
   });
@@ -33,9 +40,13 @@ router.get('/', function(req, res, next) {
    updateChar.def= req.body.def;
    updateChar.luck = req.body.luck;
    updateChar.mag = req.body.mag;
-   updateChar.stage = "end";
-   repo.updateChar(updateChar.ID, updateChar);
-   res.redirect("/end");
+   updateChar.hp = req.body.hp - req.body.hpMin;
+   if(updateChar.hp<1){
+    res.redirect("/dead");
+  }else{
+    updateChar.stage = "end";
+    repo.updateChar(updateChar.ID, updateChar);
+   res.redirect("/end");}
    });
 
   module.exports = router;

@@ -91,33 +91,29 @@ let repo = {
     },
     playerGen : (character)=>{
       if(character.race === "human"){
-            stats.hp =2;
+            stats.hp =9;
             stats.atk =2;
-            stats.def =2;
+            stats.def =0;
                         }
         if(character.race==="dwarf"){
-            stats.hp=3;
-            stats.atk=1;
+            stats.hp=5;
+            stats.luck=2;
             stats.def=2;
                }
         if(character.race==="elf"){
-            stats.hp=1;
-            stats.atk=2;
-            stats.def=3;
+            stats.hp=7;
+            stats.mag=2;
+            stats.def=1;
              }
         if(character.job==="warrior"){
-            stats.luck=0;
-            stats.mag=0;
-            stats.atk=5;
+            stats.atk=3;
         }
         if(character.job==="mage"){
-            stats.luck=0;
-            stats.mag=5;
+             stats.mag=3;
         }
         if(character.job==="thief"){
-            stats.luck=5;
-            stats.mag=0;
-        }
+            stats.luck=3;
+         }
         return stats;
     }
 

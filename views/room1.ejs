@@ -1,12 +1,25 @@
 <% include partials/head %>
+<input id="monster" value="<%= monster %>" type="hidden">
+<input id="action" value="<%= action %>" type="hidden">
+<input id="actionDesc" value="<%= actionDesc %>" type="hidden">
+<input id="fail" value="<%= fail %>" type="hidden">
+<input id="playAtk" value="<%= atk %>" type="hidden">
+<input id="playDef" value="<%= def %>" type="hidden">
+<input id="playLuck" value="<%= luck %>" type="hidden">
+<input id="playMag" value="<%= mag %>" type="hidden">
+<input id="playArt" value="<%= artifact %>" type="hidden">
+<input id="playAttack" value="<%= attack %>" type="hidden">
+<input id="playMagic" value="<%= magic %>" type="hidden">
+<input id="playTrick" value="<%= trick %>" type="hidden">
+
+
 <%= playerName %>
 <%= race %>
 <%= job %>
-<%= hp %>
 HP:
 <%= hp %>
 Atk:
-<input id="playAtk" value="<%= atk %>" type="hidden"><%= atk %>
+<%= atk %>
 Def:
 <%= def %>
 LucK:
@@ -15,34 +28,32 @@ Magic:
 <%= mag %>
 Artifact:
 <%=artifact%>
-
 <br>
-<p>An Evil Skeleton stands before you!</p>
-<h5>Choose your Action</h5> <br>
-<button class="btn" id="attackButton">
-      Attack With a Mighty Blow!
-</button>
 
-<!-- <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="r1chooser" id="r1-run" value="spell">
-    <label class="form-check-label" for="r1-run">
-        Use Your Magic to Freeze His Bones
-    </label>
+<div id="action-area">
+    <p>An Evil
+        <%= monster %> stands before you!</p>
+    <h5>Choose your Action</h5>
+    <br>
+
+    <button class="btn" id="attackButton">
+        <%= attack %>
+    </button>
+    <button class="btn" id="magicButton">
+        <%= magic %>
+    </button>
+    <button class="btn" id="trickButton">
+        <%= trick %>
+    </button>
 </div>
-<div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="r1chooser" id="r1-trick" value="trick">
-    <label class="form-check-label" for="r1-trick">
-        Tell Him a Joke
-    </label>
-</div>
-</div> -->
- 
+
 <div id="resultArea">
 
 </div>
 
 
-<form action="/room1" method="POST">
+
+<form id="formArea" class="d-none" action="/room1" method="POST">
     <div class="form-group" id="charInputs">
         <input type="hidden" id="gameNum" name="gameNum" value="<%= gameNum %>">
         <input type="hidden" id="playerName" name="playerName" value="<%= playerName %>">
@@ -56,7 +67,7 @@ Artifact:
         <input type="hidden" id="mag" name="mag" value="<%= mag %>">
         <input type="hidden" id="artifact" name="artifact" value="<%= artifact %>">
     </div>
-        <div class="form-group">
+    <div class="form-group">
         <button class="btn" type="submit">Proceed</button>
     </div>
 

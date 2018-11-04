@@ -1,56 +1,72 @@
 <% include partials/head %>
+<input id="monster" value="<%= monster %>" type="hidden">
+<input id="action" value="<%= action %>" type="hidden">
+<input id="actionDesc" value="<%= actionDesc %>" type="hidden">
+<input id="fail" value="<%= fail %>" type="hidden">
+<input id="playAtk" value="<%= atk %>" type="hidden">
+<input id="playDef" value="<%= def %>" type="hidden">
+<input id="playLuck" value="<%= def %>" type="hidden">
+<input id="playMag" value="<%= def %>" type="hidden">
+<input id="playArt" value="<%= artifact %>" type="hidden">
+<input id="playAttack" value="<%= attack %>" type="hidden">
+<input id="playMagic" value="<%= magic %>" type="hidden">
+<input id="playTrick" value="<%= trick %>" type="hidden">
+
 <%= playerName %>
 <%= race %>
-<%= job %> 
-HP: <%= hp %>
-Atk: <%= atk %>
-Def: <%= def %>
-LucK: <%= luck %>
-Magic: <%= mag %>
-Artifact: <%= artifact %>
-
+<%= job %>
+HP:
+<%= hp %>
+Atk:
+<%= atk %>
+Def:
+<%= def %>
+LucK:
+<%= luck %>
+Magic:
+<%= mag %>
+Artifact:
+<%=artifact%>
 <br>
-<p>You Are being attacked by a pack of wild demon dogs!</p>
-<form action="/room3" method="POST">
-    <div class="form-group">
-            <label for="class-chooser">Choose your Action</label> <br>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="r3chooser" id="r3-attack" value="attack"
-                    checked>
-                <label class="form-check-label" for="r3-attack">
-                    Attack Them
-                </label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="r3chooser" id="r3-run" value="spell">
-                <label class="form-check-label" for="r3-run">
-                    Cast a Spell of Illusion
-                </label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="r3chooser" id="r3-trick" value="trick">
-                <label class="form-check-label" for="r3-trick">
-                    Look Inside Your Pack
-                </label>
-            </div>
-        </div> 
-        <div class="form-group">
-            <input type="hidden" id="gameNum" name="gameNum" value = "<%= gameNum %>">
-            <input type="hidden" id="playerName" name="playerName" value = "<%= playerName %>">
-            <input type="hidden" id="race" name="race" value = "<%= race %>">
-            <input type="hidden" id="job" name="job" value = "<%= job %>">
-            <input type="hidden" id="ID" name="ID" value = "<%= ID %>">
-            <input type="hidden" id="hp" name="hp" value = "<%= hp %>">
-            <input type="hidden" id="atk" name="atk" value = "<%= atk %>">
-            <input type="hidden" id="def" name="def" value = "<%= def %>">
-            <input type="hidden" id="luck" name="luck" value = "<%= luck %>">
-            <input type="hidden" id="artifact" name="artifact" value = "<%= artifact %>">
-            <input type="hidden" id="mag" name="mag" value = "<%= mag %>">
-            <button class="btn" type="submit">Choose Wisely</button>
-            <button class="btn" type="button">Use Your <%= artifact %></button>
-        </div>
 
+<div id="action-area">
+    <p>You Come to a dark cave, and out pops a 
+        <%= monster %>
+    </p>
+    <h5>Choose your Action</h5>
+    <br>
+
+    <button class="btn" id="attackButton">
+        <%= attack %>
+    </button>
+    <button class="btn" id="magicButton">
+        <%= magic %>
+    </button>
+    <button class="btn" id="trickButton">
+        <%= trick %>
+    </button>
+ </div>
+<div id="resultArea">
+</div>
+
+<form id="formArea" class="d-none" action="/room3" method="POST">
+    <div class="form-group" id="charInputs">
+        <input type="hidden" id="gameNum" name="gameNum" value="<%= gameNum %>">
+        <input type="hidden" id="playerName" name="playerName" value="<%= playerName %>">
+        <input type="hidden" id="race" name="race" value="<%= race %>">
+        <input type="hidden" id="job" name="job" value="<%= job %>">
+        <input type="hidden" id="ID" name="ID" value="<%= ID %>">
+        <input type="hidden" id="hp" name="hp" value="<%= hp %>">
+        <input type="hidden" id="atk" name="atk" value="<%= atk %>">
+        <input type="hidden" id="def" name="def" value="<%= def %>">
+        <input type="hidden" id="luck" name="luck" value="<%= luck %>">
+        <input type="hidden" id="mag" name="mag" value="<%= mag %>">
+        <input type="hidden" id="artifact" name="artifact" value="<%= artifact %>">
+        <button class="btn" type="submit">Proceed</button>
+    </div>
 </form>
-
+<br>
+<button class="btn" type="submit">Use Your
+    <%= artifact %></button>
 
 <% include partials/foot %>
