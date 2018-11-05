@@ -3,6 +3,8 @@ let express = require('express'),
 router = express.Router(),
 repo = require("../models/postRepository");
 
+
+
 router.get('/', function(req, res, next) {
     let character = repo.getCharByName(req.query.playerName);
     res.render('room3', { title: 'room3',
