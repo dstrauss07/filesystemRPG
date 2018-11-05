@@ -5,7 +5,7 @@ repo = require("../models/postRepository");
 
 router.get('/', function(req, res, next) {
     let character = repo.getCharByName(req.query.playerName);
-    res.render('room2', { title: 'Express',
+    res.render('room2', { title: 'room2',
     playerName: character.playerName,
     race: character.race,
     job: character.job,

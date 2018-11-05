@@ -18,9 +18,10 @@ let repo = require('../models/postRepository');
   character.playerName = req.body.playerName;
   character.race = req.body.raceChooser;
   character.job = req.body.jobChooser;
-  character.stage = "artifact";
+  character.artifact = req.body.artChooser;
+  character.stage = "room1";
   repo.startGame(character);
-  res.redirect("/artifact?playerName=" + character.playerName);
+  res.redirect("/room1?playerName=" + character.playerName);
   });
 
 

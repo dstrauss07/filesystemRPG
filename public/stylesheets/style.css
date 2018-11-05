@@ -3,6 +3,15 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+button a, button a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+button a:active {
+  color:gold;
+}
+
+p {
+  color:red;
 }

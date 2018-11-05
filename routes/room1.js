@@ -11,7 +11,7 @@ router.get('/', function (req, res, next) {
   let character = repo.getCharByName(req.query.playerName);
   let stats = repo.playerGen(character);
   res.render('room1', {
-    title: 'Express',
+    title: 'room1',
     playerName: character.playerName,
     race: character.race,
     job: character.job,
