@@ -16,16 +16,17 @@ let attackButton = document.getElementById("attackButton"),
     magic = document.getElementById("playMagic").value,
     trick = document.getElementById("playTrick").value,
     actionDesc = document.getElementById("actionDesc").value,
-    actionArea = document.getElementById("action-area"),
+    buttonArea = document.getElementById("button-area"),
     formArea = document.getElementById("formArea"),
     artifactArea = document.getElementById("artifactArea"),
+    diceArea= document.getElementById("dice-area"),
     mDam = 3,
     cDam = 5;
     
 
 
 artifactButton.addEventListener("click", function(){
-        actionArea.classList.add("d-none");
+        buttonArea.classList.add("d-none");
         formArea.classList.remove("d-none");
         resultArea.innerHTML = "You use your " + playArt +" and win the day with ease, unfortunately the " + playArt +" instantly disappears.";
         charInputs.innerHTML += "<input type='hidden' id='hpMin' name='hpMin' value= 0>"
@@ -33,34 +34,38 @@ artifactButton.addEventListener("click", function(){
 
 
 attackButton.addEventListener("click", function () {
-    actionArea.classList.add("d-none");
+    buttonArea.classList.add("d-none");
+    artifactArea.classList.add("d-none");
     formArea.classList.remove("d-none");
-    var playRoll = getRandomNumber(0, 12),
+    var playRoll = getRandomNumber(2, 12),
         atkNum = parseInt(playAtk, 10),
         defNum = parseInt(playDef, 10),
         totalRoll = playRoll + atkNum ;
-
     if (totalRoll < 7) {
         let minusValue = cDam - defNum;
-        resultArea.innerHTML = "You roll: " + playRoll + " Attack Skill: " + atkNum  + " Total: " + totalRoll + "<br> A complete and Utter Failure! <br> The " + monster + " attacks you for " + cDam + " damage " + fail + "<br>Your armor absorbs " + defNum + " damage";
+        diceArea.innerHTML = "You roll: <img src='images/dice/" + playRoll + ".png'><br> + <span class='gold'> Attack Skill: " + atkNum + "</span><br><span class='green'> Total: " + totalRoll + "</span><br><span class='red'>UTTER FAILURE!</span>"; 
+        resultArea.innerHTML = "The <span class='red'>" + monster + "</span> attacks you for <span class='red'>" + cDam + " damage </span><br><span class='purple'>" + fail + "</span><br>Your armor absorbs <span class='blue'>" + defNum + " damage</span>";
         charInputs.innerHTML += "<input type='hidden' id='hpMin' name='hpMin' value= 0>"
         hpMin.value = minusValue;
     }
     if (totalRoll > 6 && totalRoll < 10) {
         let minusValue = mDam - defNum;
-        resultArea.innerHTML = "You roll: " + playRoll + " Attack Skill: " + atkNum + " Total: " + totalRoll + "<br> A Mixed Success! <br>  The " + monster + " attacks you for " + mDam + " damage. You " + attack + " and " + action + " him " + actionDesc + "<br> Your armor absorbs " + defNum + " damage";
+        diceArea.innerHTML = "You roll: <img src='images/dice/" + playRoll + ".png'><br> + <span class='gold'> Attack Skill: " + atkNum + "</span><br><span class='green'> Total: " + totalRoll + "</span><br><span class='gold'>Mixed Success</span>"; 
+        resultArea.innerHTML = "The <span class='red'> " + monster + "</span> attacks you for <span class='red'>" + mDam + " damage</span>.<br> <span class='green'> You " + attack + " and " + action + " him " + actionDesc + "</span><br> Your armor absorbs <span class='blue'>" + defNum + " damage </span>";
         charInputs.innerHTML += "<input type='hidden' id='hpMin' name='hpMin' value= 0>"
         hpMin.value = minusValue;
     }
     if (totalRoll > 9) {
-        resultArea.innerHTML = "You roll: " + playRoll + " Attack Skill: " + atkNum + " Total: " + totalRoll + "<br> A Complete Success! <br> You " + attack + " and " + action + " the " + monster + " " + actionDesc + " before he has a chance to do a thing";
+        diceArea.innerHTML = "You roll: <img src='images/dice/" + playRoll + ".png'><br> + <span class='gold'> Attack Skill: " + atkNum + "</span><br><span class='green'> Total: " + totalRoll + "</span><br><span class='blue'>TOTAL SUCCESS!</span>"; 
+        resultArea.innerHTML = "<span class='green'>You " + attack + " and " + action + " the " + monster + " " + actionDesc + " before he has a chance to do a thing</span>";
         charInputs.innerHTML += "<input type='hidden' id='hpMin' name='hpMin' value= 0>"
     }
 })
 
 
 magicButton.addEventListener("click", function () {
-    actionArea.classList.add("d-none");
+    buttonArea.classList.add("d-none");
+    artifactArea.classList.add("d-none");
     formArea.classList.remove("d-none");
     var playRoll = getRandomNumber(0, 12),
         defNum = parseInt(playDef, 10),
@@ -68,24 +73,28 @@ magicButton.addEventListener("click", function () {
         totalRoll = playRoll + magNum;
     if (totalRoll < 7) {
         let minusValue = cDam - defNum;
-        resultArea.innerHTML = "You roll: " + playRoll + " Magic Skill: " + magNum +  " Total: " + totalRoll + "<br> A complete and Utter Failure! <br> The " + monster + " attacks you for " + cDam + " damage " + fail + "<br>Your armor absorbs " + defNum + " damage";
+        diceArea.innerHTML = "You roll: <img src='images/dice/" + playRoll + ".png'><br> + <span class='gold'> Magic Skill: " + magNum + "</span><br><span class='green'> Total: " + totalRoll + "</span><br><span class='red'>UTTER FAILURE!</span>"; 
+        resultArea.innerHTML = "The <span class='red'>" + monster + "</span> attacks you for <span class='red'>" + cDam + " damage </span><br><span class='purple'>" + fail + "</span><br>Your armor absorbs <span class='blue'>" + defNum + " damage</span>";
         charInputs.innerHTML += "<input type='hidden' id='hpMin' name='hpMin' value= 0>"
         hpMin.value = minusValue;
     }
     if (totalRoll > 6 && totalRoll < 10) {
         let minusValue = mDam - defNum;
-        resultArea.innerHTML = "You roll: " + playRoll + " Magic Skill: " + magNum +  " Total: " + totalRoll + "<br> A Mixed Success! <br> The " + monster + " attacks you for " + mDam + " damage. You " + magic + " and " + action + " him " + actionDesc + "<br> Your armor absorbs " + defNum + " damage";
+        diceArea.innerHTML = "You roll: <img src='images/dice/" + playRoll + ".png'><br> + <span class='gold'> Magic Skill: " + magNum + "</span><br><span class='green'> Total: " + totalRoll + "</span><br><span class='gold'>Mixed Success</span>"; 
+        resultArea.innerHTML = "The <span class='red'> " + monster + "</span> attacks you for <span class='red'>" + mDam + " damage</span>.<br> <span class='green'> You " + attack + " and " + action + " him " + actionDesc + "</span><br> Your armor absorbs <span class='blue'>" + defNum + " damage </span>";
         charInputs.innerHTML += "<input type='hidden' id='hpMin' name='hpMin' value= 0>"
         hpMin.value = minusValue;
     }
     if (totalRoll > 9) {
-        resultArea.innerHTML = "You roll: " + playRoll + " Magic Skill: " + magNum + " Total: " + totalRoll + "<br> A Complete Success! <br> You " + magic + " and " + action + " the " + monster + " " + actionDesc + " before he has a chance to do a thing";
+        diceArea.innerHTML = "You roll: <img src='images/dice/" + playRoll + ".png'><br> + <span class='gold'> Magic Skill: " + magNum + "</span><br><span class='green'> Total: " + totalRoll + "</span><br><span class='blue'>TOTAL SUCCESS!</span>"; 
+        resultArea.innerHTML = "<span class='green'>You " + attack + " and " + action + " the " + monster + " " + actionDesc + " before he has a chance to do a thing</span>";
         charInputs.innerHTML += "<input type='hidden' id='hpMin' name='hpMin' value= 0>"
     }
 })
 
 trickButton.addEventListener("click", function () {
-    actionArea.classList.add("d-none");
+    buttonArea.classList.add("d-none");
+    artifactArea.classList.add("d-none");
     formArea.classList.remove("d-none");
     var playRoll = getRandomNumber(2, 12),
         defNum = parseInt(playDef),
@@ -94,18 +103,21 @@ trickButton.addEventListener("click", function () {
 
     if (totalRoll < 7) {
         let minusValue = cDam - defNum;
-        resultArea.innerHTML = "You roll: " + playRoll + " Magic Skill: " + luckNum +  " Total: " + totalRoll + "<br> A complete and Utter Failure! <br> The " + monster + " attacks you for " + cDam + " damage " + fail + "<br>Your armor absorbs " + defNum + " damage";
+        diceArea.innerHTML = "You roll: <img src='images/dice/" + playRoll + ".png'><br> + <span class='gold'> Luck Skill: " + luckNum + "</span><br><span class='green'> Total: " + totalRoll + "</span><br><span class='red'>UTTER FAILURE!</span>"; 
+        resultArea.innerHTML = "The <span class='red'>" + monster + "</span> attacks you for <span class='red'>" + cDam + " damage </span><br><span class='purple'>" + fail + "</span><br>Your armor absorbs <span class='blue'>" + defNum + " damage</span>";
         charInputs.innerHTML += "<input type='hidden' id='hpMin' name='hpMin' value= 0>"
         hpMin.value = minusValue;
     }
     if (totalRoll > 6 && totalRoll < 10) {
         let minusValue = mDam - defNum;
-        resultArea.innerHTML = "You roll: " + playRoll + " Magic Skill: " + luckNum +  " Total: " + totalRoll + "<br> A Mixed Success! <br>  The " + monster + " attacks you for " + mDam + " damage. You " + trick + " and " + action + " him " + actionDesc + "<br> Your armor absorbs " + defNum + " damage";
+        diceArea.innerHTML = "You roll: <img src='images/dice/" + playRoll + ".png'><br> + <span class='gold'> Luck Skill: " + luckNum + "</span><br><span class='green'> Total: " + totalRoll + "</span><br><span class='gold'>Mixed Success</span>"; 
+        resultArea.innerHTML = "The <span class='red'> " + monster + "</span> attacks you for <span class='red'>" + mDam + " damage</span>.<br> <span class='green'> You " + attack + " and " + action + " him " + actionDesc + "</span><br> Your armor absorbs <span class='blue'>" + defNum + " damage </span>";
         charInputs.innerHTML += "<input type='hidden' id='hpMin' name='hpMin' value= 0>"
         hpMin.value = minusValue;
     }
     if (totalRoll > 9) {
-        resultArea.innerHTML = "You roll: " + playRoll + " Magic Skill: " + luckNum +  " Total: " + totalRoll + "<br> A Complete Success! <br> You " + trick + " and " + action + " the " + monster + " " + actionDesc + " before he has a chance to do a thing";
+        diceArea.innerHTML = "You roll: <img src='images/dice/" + playRoll + ".png'><br> + <span class='gold'> Luck Skill: " + luckNum + "</span><br><span class='green'> Total: " + totalRoll + "</span><br><span class='blue'>TOTAL SUCCESS!</span>"; 
+        resultArea.innerHTML = "<span class='green'>You " + attack + " and " + action + " the " + monster + " " + actionDesc + " before he has a chance to do a thing</span>";
         charInputs.innerHTML += "<input type='hidden' id='hpMin' name='hpMin' value= 0>"
     }
 })

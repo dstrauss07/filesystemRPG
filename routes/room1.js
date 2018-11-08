@@ -15,6 +15,7 @@ router.get('/', function (req, res, next) {
     playerName: character.playerName,
     race: character.race,
     job: character.job,
+    gender: character.gender,
     gameNum: character.gameNum,
     artifact: character.artifact,
     hp: stats.hp,
@@ -29,6 +30,7 @@ router.get('/', function (req, res, next) {
     action: "shatter",
     actionDesc: "into a million little pieces",
     fail: "and then laughs at you as you crawl away bleeding",
+    playerAvatar: repo.playerAvatar(character),
     ID: repo.getCharIndexName(req.query.playerName)
   });
 });
@@ -40,6 +42,7 @@ router.post("/", (req, res, next) => {
   updateChar.playerName = req.body.playerName;
   updateChar.race = req.body.race;
   updateChar.job = req.body.job;
+  updateChar.gender = req.body.gender;
   updateChar.artifact = req.body.artifact;
   updateChar.ID = req.body.ID;
   updateChar.hp = req.body.hp;

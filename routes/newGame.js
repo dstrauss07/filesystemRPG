@@ -14,10 +14,12 @@ let repo = require('../models/postRepository');
 
   let character = {};
   let arr = repo.getChars();
+  let playerNameOrig= req.body.playerName;
   character.gameNum = arr.length +1;
-  character.playerName = req.body.playerName;
+  character.playerName = playerNameOrig.toUpperCase();
   character.race = req.body.raceChooser;
   character.job = req.body.jobChooser;
+  character.gender = req.body.genderChooser;
   character.artifact = req.body.artChooser;
   character.stage = "room1";
   repo.startGame(character);

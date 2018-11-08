@@ -1,3 +1,9 @@
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -15,3 +21,42 @@ button a:active {
 p {
   color:red;
 }
+#avatar{
+  width:75%;
+  align-self: center;
+}
+#monsterimage{
+  width:75%;
+  align-self: center;
+}
+
+#playerbox{
+  background-color:black;
+}
+
+.green {
+  color:green;
+}
+.gold{
+  color:goldenrod;
+}
+.blue{
+  color:blue;
+}
+.orange{
+  color:orange;
+}
+.purple{
+  color:purple;
+}
+.gray{
+  color:white;
+}
+.red{
+  color:darkred;
+  font-weight: bold;
+}
+.blinking{
+  animation: blinker 1s linear infinite;
+}
+

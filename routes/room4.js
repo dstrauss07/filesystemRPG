@@ -9,6 +9,7 @@ router.get('/', function(req, res, next) {
     playerName: character.playerName,
     race: character.race,
     job: character.job,
+    gender: character.gender,
     gameNum: character.gameNum,
     hp: character.hp,
     atk: character.atk,
@@ -23,6 +24,7 @@ router.get('/', function(req, res, next) {
     action: "slay",
     actionDesc: "as 7 of his heads explode",
     fail: "it devours you with a healthy side of Catsup",
+    playerAvatar: repo.playerAvatar(character),
     ID: repo.getCharIndexName(req.query.playerName)
  });
   });
@@ -33,6 +35,7 @@ router.get('/', function(req, res, next) {
    updateChar.playerName = req.body.playerName;
    updateChar.race = req.body.race;
    updateChar.job = req.body.job;
+   updateChar.gender = req.body.gender;
    updateChar.artifact = req.body.artifact;
    updateChar.ID = req.body.ID;
    updateChar.hp=req.body.hp;

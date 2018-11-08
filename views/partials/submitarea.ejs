@@ -1,24 +1,21 @@
-<h5>Choose your Action</h5>
-<br>
+<div id="button-area">
+    <h5>Choose your Action</h5>
+    <br>
+    <button class="btn" id="attackButton">
+        <%= attack %>
+    </button>
+    <button class="btn" id="magicButton">
+        <%= magic %>
+    </button>
+    <button class="btn" id="trickButton">
+        <%= trick %>
+    </button>
+</div> <br>
 
-<button class="btn" id="attackButton">
-    <%= attack %>
-</button>
-<button class="btn" id="magicButton">
-    <%= magic %>
-</button>
-<button class="btn" id="trickButton">
-    <%= trick %>
-</button>
-<br><br>
-<div id="artifactArea">
-<button class="btn" id="artifactButton">Use Your <%= artifact %></button>
-</div>
-</div>
-
-
-<div id="resultArea">
-</div>
+    <div id="artifactArea">
+        <button class="btn" id="artifactButton">Use Your
+            <%= artifact %></button>
+    </div>
 
 
 <form id="formArea" class="d-none" action="/<%= title %>" method="POST">
@@ -27,6 +24,7 @@
         <input type="hidden" id="playerName" name="playerName" value="<%= playerName %>">
         <input type="hidden" id="race" name="race" value="<%= race %>">
         <input type="hidden" id="job" name="job" value="<%= job %>">
+        <input type="hidden" id="gender" name="gender" value="<%= gender %>">
         <input type="hidden" id="ID" name="ID" value="<%= ID %>">
         <input type="hidden" id="hp" name="hp" value="<%= hp %>">
         <input type="hidden" id="atk" name="atk" value="<%= atk %>">

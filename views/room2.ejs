@@ -1,9 +1,25 @@
 <% include partials/head %>
 <% include partials/charref %>
+<% include partials/characterarea %>
 
-<div id="action-area">
-    <p>You Come to a rickety old Bridge, and out pops a Mean old <%= monster %>
-    </p>
+<div class="col-2 mt-3" id="monster-area">
+        <img id="monsterimage" src="images/monsters/<%= monster %>.png" alt="monster image not found">
+        <p class="pl-5 red">
+            <%= monster %>
+        </p>
+    </div>
+
+
+    <div class="col-3" id="dice-area"></div>
+<div class="col-3" id="story-area">
+    <p>An Evil
+        <%= monster %> stands before you!</p>
+        <div id="resultArea">
+            </div>       
+</div>
+
+
+</div>
 
 <% include partials/submitarea %>
 <% include partials/foot %>

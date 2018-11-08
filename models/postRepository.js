@@ -47,6 +47,8 @@ let stats ={
     luck : 1,
     mag : 1};
 
+let avatarLink = null;
+
 let repo = {
     startGame: (character) => {
         gameList.push(character);
@@ -90,31 +92,39 @@ let repo = {
         console.log("the post has been edited.");
     },
     playerGen : (character)=>{
-      if(character.race === "human"){
+      if(character.race === "Human"){
             stats.hp =9;
             stats.atk =2;
             stats.def =0;
                         }
-        if(character.race==="dwarf"){
+        if(character.race==="Dwarf"){
             stats.hp=5;
             stats.luck=2;
             stats.def=2;
                }
-        if(character.race==="elf"){
+        if(character.race==="Elf"){
             stats.hp=7;
             stats.mag=2;
             stats.def=1;
              }
-        if(character.job==="warrior"){
+        if(character.job==="Warrior"){
             stats.atk=3;
         }
-        if(character.job==="mage"){
+        if(character.job==="Mage"){
              stats.mag=3;
         }
-        if(character.job==="thief"){
+        if(character.job==="Thief"){
             stats.luck=3;
          }
         return stats;
+    },
+    playerAvatar : (character) =>{
+        let charRace = character.race,
+        charJob = character.job,
+        charGen = character.gender,
+        avatarLink = "images/playericons/" + charRace + charJob + charGen +".png"
+        return avatarLink;
+
     }
 
 };

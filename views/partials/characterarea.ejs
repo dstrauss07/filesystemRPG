@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="col-1"></div>
+    <div class="col-2 mt-3" id="playerbox">
+        <div class="row">
+            <div class="ml-5 p-2">
+                <img id="avatar" class="img-fluid" src=<%=playerAvatar %> alt="image not found">
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="pr-2 blue">
+                <%= playerName %>
+            </div>
+            <div class="purple">
+                <%= race %>/
+                <%= job %>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <span id="hpcolor" class="green pl-2 pr-2">HP:&nbsp;
+                <%= hp %></span>
+            <span class="gold pl-2 pr-2"> Atk:&nbsp;
+                <%= atk %></span>
+            <span class="blue pl-2 pr-2"> Def:&nbsp;
+                <%= def %></span>
+            <span class="orange pl-2 pr-2">LucK:&nbsp;
+                <%= luck %></span>
+            <span class="purple pl-2 pr-2"> Magic:&nbsp;
+                <%= mag %></span>
+            <span class="gray pl-2">Artifact:&nbsp;
+                <%=artifact%></span>
+
+        </div>
+    </div>
