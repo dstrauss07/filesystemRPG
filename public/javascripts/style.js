@@ -1,3 +1,4 @@
+"use strict";
 let playHp = parseInt(document.getElementById("playHp").value),
 hpcolor = document.getElementById("hpcolor");
 

@@ -1,6 +1,7 @@
 <div class="row" id="playrow">
-    <div class="col-1 mt-4">
+    <div class="col-1 mt-2">
         <span class="red bold"><%= title %></span><br><br>
+        <h5>Stats</h3>
         <span id="hpcolor" class="green pl-2 pr-2">HP:&nbsp;
             <%= hp %></span><br>
         <span class="gold pl-2 pr-2"> Atk:&nbsp;
@@ -11,8 +12,10 @@
             <%= luck %></span><br>
         <span class="purple pl-2 pr-2"> Magic:&nbsp;
             <%= mag %></span><br>
-        <span class="red pl-2"><%=artifact%></span>
-
+    </div>
+    <div class="col-1 mt-5 pt-2">
+        <h5>Artifact</h5>
+    <span class="red pl-2"><img id="artifactimage" src="images/artifacts/<%=artifact%>.png"><%=artifact%></span>
     </div>
     <div class="col-2 mt-3 mt-5" id="playerbox">
         <div class="row">

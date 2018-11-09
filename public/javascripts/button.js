@@ -34,7 +34,7 @@ artifactButton.addEventListener("click", function(){
         resultArea.innerHTML = "You use your " + playArt +" and win the day with ease, unfortunately the " + playArt +" instantly disappears.";
         charInputs.innerHTML += "<input type='hidden' id='hpMin' name='hpMin' value= 0>"
         charInputs.innerHTML += "<input type='hidden' id='finalredirect' name='finalredirect' value='" + redirectpage +"'>"
-        artifact.value = "none"; })
+        artifact.value = "None"; })
 
 
 attackButton.addEventListener("click", function () {

@@ -36,6 +36,12 @@ p {
   max-height:3rem;
 }
 
+#artifactimage{
+  width:4rem;
+  max-height:4rem;
+  padding: 1rem 1rem 0 0;
+}
+
 #playerbox{
   vertical-align: bottom;
   text-align:bottom;

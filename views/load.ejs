@@ -1,4 +1,5 @@
-<% include partials/head %>
+<% include partials/head %>+
+
 <p>Load Game of
     <%= title %>
 </p>
@@ -24,14 +25,11 @@
                     <img id="playerthumb" class="img-thumbnail" src="images/playericons/<%= characters[i].race %><%= characters[i].job %><%= characters[i].gender %>.png" alt="no image">
                 </div>
         <div class="p-2">
-                <button class="btn btn-success">
-                    <a href="/<%= characters[i].stage %>?playerName=<%=characters[i].playerName %>">Load!</a>
-                </button>
-            </div>
+                <a class="btn btn-success" href="/<%= characters[i].stage %>?playerName=<%=characters[i].playerName %>">Load!</a>
+             </div>
         <div class="p-2">
-            <button class="btn btn-danger">
-                <a href="/delete/<%=characters[i].playerName %>">Delete!</a>
-            </button>
+             <a class="btn btn-danger" href="/delete/<%=characters[i].playerName %>">Delete!</a>
+            
         </div>
 
     </div>
