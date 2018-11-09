@@ -1,33 +1,32 @@
-<div class="row">
-    <div class="col-1"></div>
-    <div class="col-2 mt-3" id="playerbox">
+<div class="row" id="playrow">
+    <div class="col-1 mt-4">
+        <span class="red bold"><%= title %></span><br><br>
+        <span id="hpcolor" class="green pl-2 pr-2">HP:&nbsp;
+            <%= hp %></span><br>
+        <span class="gold pl-2 pr-2"> Atk:&nbsp;
+            <%= atk %></span><br>
+        <span class="blue pl-2 pr-2"> Def:&nbsp;
+            <%= def %></span><br>
+        <span class="orange pl-2 pr-2">LucK:&nbsp;
+            <%= luck %></span><br>
+        <span class="purple pl-2 pr-2"> Magic:&nbsp;
+            <%= mag %></span><br>
+        <span class="red pl-2"><%=artifact%></span>
+
+    </div>
+    <div class="col-2 mt-3 mt-5" id="playerbox">
         <div class="row">
-            <div class="ml-5 p-2">
+            <div class="ml-5 pl-4 mt-1 pb-1">
                 <img id="avatar" class="img-fluid" src=<%=playerAvatar %> alt="image not found">
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="pr-2 blue">
+            <div class="pr-2 blue bold">
                 <%= playerName %>
             </div>
-            <div class="purple">
+            <div class="purple bold">
                 <%= race %>/
                 <%= job %>
             </div>
-        </div>
-        <div class="row justify-content-center">
-            <span id="hpcolor" class="green pl-2 pr-2">HP:&nbsp;
-                <%= hp %></span>
-            <span class="gold pl-2 pr-2"> Atk:&nbsp;
-                <%= atk %></span>
-            <span class="blue pl-2 pr-2"> Def:&nbsp;
-                <%= def %></span>
-            <span class="orange pl-2 pr-2">LucK:&nbsp;
-                <%= luck %></span>
-            <span class="purple pl-2 pr-2"> Magic:&nbsp;
-                <%= mag %></span>
-            <span class="gray pl-2">Artifact:&nbsp;
-                <%=artifact%></span>
-
         </div>
     </div>

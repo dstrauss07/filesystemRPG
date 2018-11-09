@@ -17,6 +17,8 @@ router.get('/', function(req, res, next) {
     luck: character.luck,
     mag: character.mag,
     artifact: character.artifact,
+    curpage: "room4",
+    redirect: "end",
     attack: "Stab him with the point of your sword",
     magic: "Hurl a mighty fireball at the beast",
     trick: "Tell the Hydra an Impossible riddle",
@@ -31,6 +33,7 @@ router.get('/', function(req, res, next) {
 
   router.post("/",(req,res,next)=>{
     let updateChar = {};
+    let  finalRedirect = req.body.finalredirect;
    updateChar.gameNum = req.body.gameNum;
    updateChar.playerName = req.body.playerName;
    updateChar.race = req.body.race;
@@ -47,9 +50,9 @@ router.get('/', function(req, res, next) {
    if(updateChar.hp<1){
     res.redirect("/dead");
   }else{
-  updateChar.stage = "end";
+  updateChar.stage = finalRedirect;
   repo.updateChar(updateChar.ID, updateChar);
-   res.redirect("/end");}
+  res.redirect("/"+finalRedirect+"?playerName=" + updateChar.playerName);}
    });
 
   module.exports = router;

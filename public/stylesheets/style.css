@@ -22,7 +22,8 @@ p {
   color:red;
 }
 #avatar{
-  width:75%;
+  width:8rem;
+  max-height:8rem;
   align-self: center;
 }
 #monsterimage{
@@ -30,10 +31,27 @@ p {
   align-self: center;
 }
 
-#playerbox{
-  background-color:black;
+#playerthumb{
+  width:3rem;
+  max-height:3rem;
 }
 
+#playerbox{
+  vertical-align: bottom;
+  text-align:bottom;
+}
+#playrow{
+  background-color:silver;
+}
+
+#dice-area img{
+  width:12rem;
+  padding:1rem;
+}
+
+#dice-area{
+ text-align:center;
+}
 .green {
   color:green;
 }
@@ -50,10 +68,12 @@ p {
   color:purple;
 }
 .gray{
-  color:white;
+  color:darkslategrey;
 }
 .red{
   color:darkred;
+}
+.bold{
   font-weight: bold;
 }
 .blinking{

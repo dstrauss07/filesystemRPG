@@ -30,6 +30,8 @@ router.get('/', function (req, res, next) {
     action: "shatter",
     actionDesc: "into a million little pieces",
     fail: "and then laughs at you as you crawl away bleeding",
+    curpage: "room1",
+    redirect: "room2",
     playerAvatar: repo.playerAvatar(character),
     ID: repo.getCharIndexName(req.query.playerName)
   });
@@ -38,6 +40,7 @@ router.get('/', function (req, res, next) {
 
 router.post("/", (req, res, next) => {
   let updateChar = {};
+  let  finalRedirect = req.body.finalredirect;
   updateChar.gameNum = req.body.gameNum;
   updateChar.playerName = req.body.playerName;
   updateChar.race = req.body.race;
@@ -54,9 +57,9 @@ router.post("/", (req, res, next) => {
   if(updateChar.hp<1){
     res.redirect("/dead");
   }else{
-  updateChar.stage = "room2";
+  updateChar.stage = finalRedirect;
   repo.updateChar(updateChar.ID, updateChar);
-  res.redirect("/room2?playerName=" + updateChar.playerName);}
+  res.redirect("/"+finalRedirect+"?playerName=" + updateChar.playerName);}
 });
 
 module.exports = router;
