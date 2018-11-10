@@ -1,10 +1,15 @@
 <% include partials/head %>
 
- <p>You have ventured through the evil labyrinth and Defeated the Mighty Hydra!<br>Congratulations <%=playerName %></p>
-    <div class="ml-5 pl-4 mt-1 pb-1">
-          <img id="avatar" class="img-fluid" src=<%=playerAvatar %> alt="image not found">
-      </div>
+<div class="row justify-content-center">
+  <p class="deadtext p-2 text-center">You have ventured through the evil labyrinth and Defeated the Mighty Hydra!<br>Congratulations
+    <%=playerName %>
+  </p>
+  <div class="ml-5 pl-4 mt-1 pb-1">
+    <img id="avatar" class="img-fluid" src=<%=playerAvatar %> alt="image not found">
+  </div>
+</div>
 
-    <a href="/">Play Again?</a>
-
-  <% include partials/foot %>
+<div class="row justify-content-center">
+<a class="btn btn-danger decoratebutton" href="/">Play Again?</a>
+</div>
+<% include partials/foot %>

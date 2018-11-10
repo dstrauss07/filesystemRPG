@@ -22,10 +22,15 @@ let attackButton = document.getElementById("attackButton"),
     diceArea= document.getElementById("dice-area"),
     currentpage= document.getElementById("currentPage").value,
     redirectpage = document.getElementById("redirectPage").value,
+    monsterArea = document.getElementById("monsterimage"),
     mDam = 3,
     cDam = 5;
     
-
+ var artifactHide = function(){
+     if(playArt === "None"){
+        artifactArea.classList.add("d-none");
+     }
+ }
 
 artifactButton.addEventListener("click", function(){
         buttonArea.classList.add("d-none");
@@ -34,6 +39,7 @@ artifactButton.addEventListener("click", function(){
         resultArea.innerHTML = "You use your " + playArt +" and win the day with ease, unfortunately the " + playArt +" instantly disappears.";
         charInputs.innerHTML += "<input type='hidden' id='hpMin' name='hpMin' value= 0>"
         charInputs.innerHTML += "<input type='hidden' id='finalredirect' name='finalredirect' value='" + redirectpage +"'>"
+        monsterArea.classList.add("deadimage");
         artifact.value = "None"; })
 
 
@@ -60,12 +66,14 @@ attackButton.addEventListener("click", function () {
         charInputs.innerHTML += "<input type='hidden' id='hpMin' name='hpMin' value= 0>"
         hpMin.value = minusValue;
         charInputs.innerHTML += "<input type='hidden' id='finalredirect' name='finalredirect' value='" + redirectpage +"'>"
+        monsterArea.classList.add("deadimage");
     }
     if (totalRoll > 9) {
         diceArea.innerHTML = "<span class='red'> You roll: </span><img src='images/dice/" + playRoll + ".png'><br> <span class='red bold'>" + playRoll + "</span> + Attack Skill:<span class='blue bold'>" + atkNum + "</span><br><span class='green'> Total: " + totalRoll + "</span><br><span class='blue'>TOTAL SUCCESS!</span>"; 
         resultArea.innerHTML = "<span class='green'>You " + attack + " and " + action + " the " + monster + " " + actionDesc + " before he has a chance to do a thing</span>";
         charInputs.innerHTML += "<input type='hidden' id='hpMin' name='hpMin' value= 0>"
         charInputs.innerHTML += "<input type='hidden' id='finalredirect' name='finalredirect' value='" + redirectpage +"'>"
+        monsterArea.classList.add("deadimage");
     }
 })
 
@@ -74,7 +82,7 @@ magicButton.addEventListener("click", function () {
     buttonArea.classList.add("d-none");
     artifactArea.classList.add("d-none");
     formArea.classList.remove("d-none");
-    var playRoll = getRandomNumber(0, 12),
+    var playRoll = getRandomNumber(2, 12),
         defNum = parseInt(playDef, 10),
         magNum = parseInt(playMag, 10),
         totalRoll = playRoll + magNum;
@@ -93,12 +101,14 @@ magicButton.addEventListener("click", function () {
         charInputs.innerHTML += "<input type='hidden' id='hpMin' name='hpMin' value= 0>"
         hpMin.value = minusValue;
         charInputs.innerHTML += "<input type='hidden' id='finalredirect' name='finalredirect' value='" + redirectpage +"'>"
+        monsterArea.classList.add("deadimage");
     }
     if (totalRoll > 9) {
         diceArea.innerHTML = "<span class='red'> You roll: </span><img src='images/dice/" + playRoll + ".png'><br> <span class='red bold'>" + playRoll + "</span> + Magic Skill:<span class='blue bold'>" + magNum + "</span><br><span class='green'> Total: " + totalRoll + "</span><br><span class='blue'>TOTAL SUCCESS!</span>"; 
         resultArea.innerHTML = "<span class='green'>You " + magic + " and " + action + " the " + monster + " " + actionDesc + " before he has a chance to do a thing</span>";
         charInputs.innerHTML += "<input type='hidden' id='hpMin' name='hpMin' value= 0>"
         charInputs.innerHTML += "<input type='hidden' id='finalredirect' name='finalredirect' value='" + redirectpage +"'>"
+        monsterArea.classList.add("deadimage");
     }
 })
 
@@ -126,12 +136,14 @@ trickButton.addEventListener("click", function () {
         charInputs.innerHTML += "<input type='hidden' id='hpMin' name='hpMin' value= 0>"
         hpMin.value = minusValue;
         charInputs.innerHTML += "<input type='hidden' id='finalredirect' name='finalredirect' value='" + redirectpage +"'>"
+        monsterArea.classList.add("deadimage");
     }
     if (totalRoll > 9) {
         diceArea.innerHTML = "<span class='red'> You roll: </span> <img src='images/dice/" + playRoll + ".png'><br><span class='red bold'>" + playRoll + "</span> + Luck Skill: <span class='blue bold'>" + luckNum + "</span><br><span class='green'> Total: " + totalRoll + "</span><br><span class='blue'>TOTAL SUCCESS!</span>"; 
         resultArea.innerHTML = "<span class='green'>You " + trick + " and " + action + " the " + monster + " " + actionDesc + " before he has a chance to do a thing</span>";
         charInputs.innerHTML += "<input type='hidden' id='hpMin' name='hpMin' value= 0>"
         charInputs.innerHTML += "<input type='hidden' id='finalredirect' name='finalredirect' value='" + redirectpage +"'>"
+        monsterArea.classList.add("deadimage");
     }
 })
 

@@ -1,97 +1,97 @@
 <% include partials/head %>
-<p>New Game of
-    <%= title %>
-</p>
+<div class="row justify-content-center">
+    <form id="form-area" action="/newGame" method="POST">
+        <div class="form-group">
+            <label for="playerName">Player Name</label>
+            <input type="text" class="form-control nameinput" name="playerName" id="playerName" placeholder="Character Name?"
+                required>
+        </div>
 
-<form action="/newGame" method="POST">
-    <div class="form-group">
-        <label for="playerName">Player Name</label>
-        <input type="text" class="form-control" name="playerName" id="playerName" placeholder="Character Name?"
-            required>
-    </div>
+        <div class="form-group">
+            <label for="race-chooser">Your Race</label><br>
+            <div class="form-check form-check-inline">
 
-    <div class="form-group">
-        <label for="race-chooser">Your Race</label><br>
-        <div class="form-check form-check-inline">
-
-            <input class="form-check-input" type="radio" name="raceChooser" id="race-human" value="Human" checked>
-            <label class="form-check-label" for="race-human">
-                Human
-            </label>
+                <input class="form-check-input" type="radio" name="raceChooser" id="race-human" value="Human" checked>
+                <label class="form-check-label" for="race-human">
+                    Human
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="raceChooser" id="race-dwarf" value="Dwarf">
+                <label class="form-check-label" for="race-dwarf">
+                    Dwarf
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="raceChooser" id="race-elf" value="Elf">
+                <label class="form-check-label" for="race-elf">
+                    Elf
+                </label>
+            </div>
         </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="raceChooser" id="race-dwarf" value="Dwarf">
-            <label class="form-check-label" for="race-dwarf">
-                Dwarf
-            </label>
+        <div class="form-group">
+            <label for="class-chooser">Your Fighting Style</label> <br>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="jobChooser" id="job-warrior" value="Warrior" checked>
+                <label class="form-check-label" for="job-warrior">
+                    Warrior
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="jobChooser" id="job-mage" value="Mage">
+                <label class="form-check-label" for="job-mage">
+                    Mage
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="jobChooser" id="job-thief" value="Thief">
+                <label class="form-check-label" for="job-thief">
+                    Thief
+                </label>
+            </div>
         </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="raceChooser" id="race-elf" value="Elf">
-            <label class="form-check-label" for="race-elf">
-                Elf
-            </label>
+        <div class="form-group">
+            <label for="class-chooser">Your Gender</label> <br>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="genderChooser" id="gender-male" value="m" checked>
+                <label class="form-check-label" for="gender-male">
+                    Male
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="genderChooser" id="gender-female" value="f">
+                <label class="form-check-label" for="gender-female">
+                    Female
+                </label>
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        <label for="class-chooser">Your Fighting Style</label> <br>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="jobChooser" id="job-warrior" value="Warrior" checked>
-            <label class="form-check-label" for="job-warrior">
-                Warrior
-            </label>
+        <div class="form-group">
+            <label for="class-chooser">Choose your Artifact</label> <br>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="artChooser" id="art-wand" value="Wand" checked>
+                <label class="form-check-label" for="art-wand">
+                    Magic Wand
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="artChooser" id="art-sword" value="Sword">
+                <label class="form-check-label" for="job-mage">
+                    Mighty Sword
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="artChooser" id="art-coin" value="Coin">
+                <label class="form-check-label" for="art-coin">
+                    Lucky Coin
+                </label>
+            </div>
         </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="jobChooser" id="job-mage" value="Mage">
-            <label class="form-check-label" for="job-mage">
-                Mage
-            </label>
+        <div class="form-group pt-3">
+            <div class="row justify-content-center">
+                <button class="btn btn-success buttondecoration mr-3" type="submit">Start Game</button>
+                <button class="btn btn-warning buttondecoration" type="reset">Reset <i class="fas fa-sync"></i></button>
+            </div>
         </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="jobChooser" id="job-thief" value="Thief">
-            <label class="form-check-label" for="job-thief">
-                Thief
-            </label>
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="class-chooser">Your Gender</label> <br>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="genderChooser" id="gender-male" value="m" checked>
-            <label class="form-check-label" for="gender-male">
-                Male
-            </label>
-        </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="genderChooser" id="gender-female" value="f">
-            <label class="form-check-label" for="gender-female">
-                Female
-            </label>
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="class-chooser">Choose your Artifact</label> <br>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="artChooser" id="art-wand" value="Wand" checked>
-            <label class="form-check-label" for="art-wand">
-                Sparkly Magic Wand
-            </label>
-        </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="artChooser" id="art-sword" value="Sword">
-            <label class="form-check-label" for="job-mage">
-                A Magnificent Sword
-            </label>
-        </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="artChooser" id="art-coin" value="Coin">
-            <label class="form-check-label" for="art-coin">
-                A lucky Coin
-            </label>
-        </div>
-    </div>
-    <div class="form-group">
-        <button class="btn" type="submit">Start Game</button>
-        <button class="btn" type="reset">Reset</button>
-    </div>
-</form>
+    </form>
+</div>
 <% include partials/foot %>

@@ -1,26 +1,116 @@
-@keyframes blinker {
-  50% {
-    opacity: 0;
-  }
+@import url('https://fonts.googleapis.com/css?family=Black+And+White+Picture|Caveat|Charmonman|Vampiro+One|Shadows+Into+Light');
+
+p,h2,h3,h4,h5,h6,button{
+  font-family: 'Shadows Into Light', cursive;
+ }
+
+ label{
+   font-weight:bold;
+   color:aliceblue;
+   font-size:1.4rem;
+   font-family: 'Charmonman', cursive;
+   text-decoration:underline;
+ }
+
+ .form-check-input{
+   background-color:blue;
+ }
+ 
+ .form-check-label{
+   font-size:1rem;
+   text-decoration:none;
+ }
+
+ .nameinput{
+  font-family: 'Shadows Into Light', cursive;
+  font-size:1.2rem;
+  font-weight:bold;
+ }
+
+.deletespan{
+  background-color:white;
+  font-size:1.6rem;
+  margin:2rem;
+  padding:.5rem;
 }
 
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.deadtext{
+  align-content:center;
+  background-color:white;
+  color:maroon;
+  font-family: 'Shadows Into Light', cursive;
+  font-size:1.2rem;
+  margin-top:1rem;
 }
 
-button a, button a:hover {
+ span{
+  font-family: 'Black And White Picture', sans-serif;
+  font-size: 1rem;
+}
+.container-fluid{
+  background-color:rgb(155, 199, 155);
+}
+
+a {
   color: white;
   text-decoration: none;
+  font-family: 'Charmonman', cursive;
 }
 
-button a:active {
+
+a:active {
   color:gold;
 }
 
-p {
-  color:red;
+.titletext{
+  font-size:3rem;
+  color:white;
+  background-color:black;
+  font-weight:bold;
+  border: .5rem solid white;
+  border-radius: 3rem;
+  margin: 2rem 0;
+  animation-name: flyinright;
+  animation-timing-function: ease-in-out;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
 }
+
+.titletext:hover{
+  text-decoration:none;
+  color:gold;
+  border: .5rem solid gold;
+}
+
+.headerdecoration{
+  color:rgb(187, 4, 4);
+  font-weight:bold;
+  font-family: 'Shadows Into Light', cursive;
+  text-decoration:underline;
+}
+
+.buttondecoration{
+  font-family: 'Caveat', cursive;
+  font-size: 1.2rem !important;
+}
+
+.charactertext1{
+  color:rgb(4, 4, 185);
+  font-weight:bold;
+}
+.charactertext2{
+  color:rgb(121, 28, 121);
+  font-weight:bold;
+}
+
+.monstertext{
+  color:rgb(255, 224, 224);
+  font-weight:bold;
+  font-size:1.4rem;
+}
+
+/* Images */
+
 #avatar{
   width:8rem;
   max-height:8rem;
@@ -28,12 +118,13 @@ p {
 }
 #monsterimage{
   width:75%;
+  max-height:8rem;
   align-self: center;
 }
 
 #playerthumb{
-  width:3rem;
-  max-height:3rem;
+  width:4rem;
+  max-height:4rem;
 }
 
 #artifactimage{
@@ -41,13 +132,15 @@ p {
   max-height:4rem;
   padding: 1rem 1rem 0 0;
 }
-
-#playerbox{
-  vertical-align: bottom;
-  text-align:bottom;
+#artifactbutton{
+  padding-left:.5rem;
+  width:1.5rem;
+  max-height:3rem;
 }
-#playrow{
-  background-color:silver;
+
+.buttonicon{
+  width:80%;
+  max-height:2rem;
 }
 
 #dice-area img{
@@ -55,8 +148,56 @@ p {
   padding:1rem;
 }
 
+/* areas */
+#form-area{
+  background-color:rgb(0, 0, 116);
+  padding:2rem;
+}
+
+#playrow{
+  background-color:whitesmoke;
+}
+#stats-area{
+  background-color:aliceblue;
+}
+#art-area{
+  background-color:lightblue;
+}
+#player-box{
+  vertical-align: bottom;
+  background-color:lightcyan;
+}
+#monster-area{
+  background-color:black;
+}
+
+#story-area{
+  background-color:wheat;
+  font-family: 'Caveat', cursive;
+  font-size:1.2rem;
+  padding:1.3rem;
+}
+
 #dice-area{
+ background-color: whitesmoke;
  text-align:center;
+}
+
+#load-area{
+  background-color:black;
+  margin: 1.5rem 3rem;
+  align-items:center;
+  justify-content: center;
+
+}
+#load-area p{
+  color:white;
+  font-size:1.5rem;
+}
+
+/* Text Formatting */
+.white{
+  color:white;
 }
 .green {
   color:green;
@@ -82,7 +223,6 @@ p {
 .bold{
   font-weight: bold;
 }
-.blinking{
-  animation: blinker 1s linear infinite;
-}
+
+
 

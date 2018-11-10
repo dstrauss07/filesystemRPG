@@ -48,7 +48,7 @@ router.get('/', function(req, res, next) {
    updateChar.mag = req.body.mag;
    updateChar.hp = req.body.hp - req.body.hpMin;
    if(updateChar.hp<1){
-    res.redirect("/dead");
+    res.redirect("/dead?playerName=" + updateChar.playerName);
   }else{
   updateChar.stage = finalRedirect;
   repo.updateChar(updateChar.ID, updateChar);

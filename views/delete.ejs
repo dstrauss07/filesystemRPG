@@ -1,10 +1,13 @@
 <% include partials/head %>
-<main>
-        <p>Delete Game <%= gameNum%> : <%=playerName %>  the <%=race %> <%=job %> </p>
+<div class="row justify-content-center">
+        <span class="deletespan">Delete Game <%= gameNum%> : <%=playerName %>  the <%=race %> <%=job %> </span>
+</div>
+<div class="row justify-content-center">
 <form action= "/delete" method="POST">
     <input type="hidden" id="delID" name="delid" value="<%= id %>">
     <input type="hidden" id="delCharName" name="delCharName" value="<%= playerName %>">
-    <button type="submit">Delete Post</button>
+    <button class="btn btn-danger buttondecoration" type="submit">Delete Game?
+    </button>
 </form>
 
 </main>

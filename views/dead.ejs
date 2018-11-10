@@ -1,6 +1,11 @@
 <% include partials/head %>
-    <p><%= title %></p>
-
-    <a href="/">Play Again?</a>
-
+<div class="row justify-content-center">
+    <p class="deadtext"><%=playerName %> fought bravely, but in the end, died most pathetically...</p>
+</div>
+<div class="row justify-content-center">
+  <img src="images/images/grave.gif"> <img id="avatar" class="img-fluid deadimage" src=<%=playerAvatar %> alt="image not found"><img src="images/images/grave.gif">
+</div>
+<div class="row justify-content-center">
+    <a class="btn btn-danger decoratebutton mt-2 mb-2" href="/">Play Again?</a>
+  </div>
   <% include partials/foot %>
