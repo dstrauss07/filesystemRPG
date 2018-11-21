@@ -2,8 +2,14 @@
   "name": "filesystemrpg",
   "version": "0.0.0",
   "private": true,
+  /*For OpenShift */
+  "main": "server.js"
+   /*End OpenShift */
   "scripts": {
-    "start": "node ./bin/www"
+  /*For OpenShift */
+   "start": "node server.js",
+   /*End OpenShift */
+  /*  "start": "node ./bin/www" */
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
